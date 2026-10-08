@@ -1,0 +1,11 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "lightbox",
+  "description": "The lightbox window's page (loopback only) may only close or destroy itself. Do not widen.",
+  "windows": ["lightbox"],
+  "local": false,
+  "remote": {
+    "urls": ["http://localhost:*/*", "http://127.0.0.1:*/*"]
+  },
+  "permissions": ["core:window:allow-close", "core:window:allow-destroy"]
+}

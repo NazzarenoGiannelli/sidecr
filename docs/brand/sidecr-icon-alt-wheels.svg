@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Sidecr">
+  <rect width="512" height="512" rx="112" fill="#d9dad8"/>
+  <!-- main pane: the terminal -->
+  <rect x="58" y="128" width="268" height="236" rx="46" fill="#303438"/>
+  <!-- prompt chevron and cursor, cut out of the pane -->
+  <path d="M128 208 L192 246 L128 284" fill="none" stroke="#d9dad8" stroke-width="26" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="214" y="288" width="64" height="24" rx="12" fill="#d9dad8"/>
+  <!-- coupling between the two -->
+  <rect x="316" y="238" width="48" height="24" rx="12" fill="#303438"/>
+  <!-- sidecar: the chat pod -->
+  <rect x="350" y="170" width="112" height="170" rx="42" fill="#5347fd"/>
+  <circle cx="380" cy="255" r="11" fill="#ffffff"/>
+  <circle cx="406" cy="255" r="11" fill="#ffffff"/>
+  <circle cx="432" cy="255" r="11" fill="#ffffff"/>
+  <!-- wheels -->
+  <circle cx="132" cy="388" r="32" fill="#303438" stroke="#d9dad8" stroke-width="12"/>
+  <circle cx="262" cy="388" r="32" fill="#303438" stroke="#d9dad8" stroke-width="12"/>
+  <circle cx="406" cy="364" r="26" fill="#5347fd" stroke="#d9dad8" stroke-width="12"/>
+</svg>

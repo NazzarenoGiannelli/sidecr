@@ -1,0 +1,16 @@
+[package]
+name = "sidecr-shell"
+version = "0.1.0"
+description = "Sidecr native window: a frameless, translucent Tauri 2 window around the local Sidecr page"
+edition = "2021"
+publish = false
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = [] }
+tauri-plugin-single-instance = "2"
+
+[profile.release]
+strip = true

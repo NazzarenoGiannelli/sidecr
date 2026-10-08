@@ -1,0 +1,44 @@
+{
+  "name": "sidecr",
+  "version": "0.1.0",
+  "description": "Sidecr: a companion window for the herdr terminal multiplexer",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "author": "Nazzareno Giannelli",
+  "homepage": "https://github.com/NazzarenoGiannelli/sidecr#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NazzarenoGiannelli/sidecr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/NazzarenoGiannelli/sidecr/issues"
+  },
+  "keywords": [
+    "herdr",
+    "herdr-plugin",
+    "claude-code",
+    "companion",
+    "terminal",
+    "tauri"
+  ],
+  "engines": {
+    "bun": ">=1.3.0"
+  },
+  "scripts": {
+    "test": "bun test",
+    "build:ui": "bun build ui/app.ts ui/lightbox.ts --outdir dist --target browser",
+    "typecheck": "tsc --noEmit",
+    "build:shell": "cd shell/src-tauri && cargo tauri build --no-bundle",
+    "build:shell:test": "cd shell/src-tauri && CARGO_TARGET_DIR=target-test cargo tauri build --no-bundle --config tauri.test.conf.json",
+    "check:shell": "cargo check --manifest-path shell/src-tauri/Cargo.toml",
+    "demo:fixture": "python demo/fixture.py",
+    "demo:capture": "bun demo/capture.ts",
+    "demo:compose": "bun demo/compose.ts",
+    "demo:hero": "python demo/fixture.py && bun run build:ui && bun demo/capture.ts && bun demo/compose.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "1.4.2",
+    "typescript": "^5.6.0"
+  }
+}

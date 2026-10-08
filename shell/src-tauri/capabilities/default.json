@@ -1,0 +1,21 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "The local Sidecr page (loopback only) may close, destroy, drag and minimise its own window, set its window effect and always-on-top flag (the settings), hear the shell's events, and open the lightbox window through the app's one command. Do not widen: the page renders model output and file contents.",
+  "windows": ["main"],
+  "local": false,
+  "remote": {
+    "urls": ["http://localhost:*/*", "http://127.0.0.1:*/*"]
+  },
+  "permissions": [
+    "core:window:allow-close",
+    "core:window:allow-destroy",
+    "core:window:allow-start-dragging",
+    "core:window:allow-minimize",
+    "core:window:allow-set-effects",
+    "core:window:allow-set-always-on-top",
+    "core:event:allow-listen",
+    "core:event:allow-unlisten",
+    "allow-open-lightbox"
+  ]
+}

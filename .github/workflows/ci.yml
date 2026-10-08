@@ -1,0 +1,79 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        # The oldest Bun the README promises, on both systems, and the newest once.
+        bun: ["1.3.0"]
+        include:
+          - os: ubuntu-latest
+            bun: latest
+    name: test (${{ matrix.os }}, bun ${{ matrix.bun }})
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+        with:
+          bun-version: ${{ matrix.bun }}
+
+      - run: bun install --frozen-lockfile
+
+      - name: Typecheck
+        run: bun run typecheck
+
+      # The suite needs no herdr, display, browser or file manager: all of those are injected. It also carries the
+      # repository's guards (English-only UI, no windowsHide on GUI spawns, no innerHTML in ui/, public hygiene,
+      # manifest and package metadata in agreement, docs links that resolve).
+      - name: Tests
+        run: bun test
+        env:
+          # Shared runners are slower than a developer machine: the performance budgets are multiplied by this.
+          SIDECR_TEST_TIME_SCALE: "3"
+
+      # The two build steps herdr runs on install are bun install and this one.
+      - name: Build the window
+        run: bun run build:ui
+
+      # The window runs in a browser: a Node built-in in the bundle would fail there.
+      - name: No Node built-ins in the bundle
+        shell: bash
+        run: |
+          test -s dist/app.js
+          test -s dist/lightbox.js
+          if grep -q "node:" dist/app.js dist/lightbox.js; then
+            echo "dist/ imports a node: module" >&2
+            exit 1
+          fi
+
+  shell:
+    name: native shell (windows-latest)
+    runs-on: windows-latest
+    defaults:
+      run:
+        working-directory: shell/src-tauri
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: dtolnay/rust-toolchain@stable
+
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: shell/src-tauri -> target
+
+      - name: cargo check
+        run: cargo check --locked
+
+      - name: cargo test
+        run: cargo test --locked

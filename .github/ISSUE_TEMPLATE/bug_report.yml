@@ -1,0 +1,82 @@
+name: Bug report
+description: Something in Sidecr does not work as described.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. Please check the Troubleshooting table in the README first.
+        For a security problem, do not open an issue: see SECURITY.md.
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - Windows 11
+        - Windows 10
+        - Linux (Wayland)
+        - Linux (X11)
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: os-details
+    attributes:
+      label: OS details
+      description: Linux distribution and desktop or compositor, or the Windows build.
+      placeholder: "e.g. Arch with Hyprland, or Windows 11 24H2"
+  - type: input
+    id: herdr-version
+    attributes:
+      label: herdr version
+      description: The output of `herdr --version`.
+    validations:
+      required: true
+  - type: input
+    id: sidecr-version
+    attributes:
+      label: Sidecr version
+      description: Settings (Ctrl+,), About; or `version` in the plugin's package.json. Add the commit if you run a checkout.
+    validations:
+      required: true
+  - type: dropdown
+    id: launcher
+    attributes:
+      label: Window
+      description: Which window Sidecr opened in.
+      options:
+        - Chromium app window (Edge, Chrome or Chromium)
+        - Native shell (sidecr-shell)
+        - No window opened
+        - Not sure
+    validations:
+      required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser
+      description: For the Chromium app window, which browser and version.
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Press Alt+S in a Claude Code pane
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: What you see
+      description: What happened, and what you expected instead. A screenshot helps.
+    validations:
+      required: true
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: |
+        The plugin log (`herdr plugin log list`), and the end of `server.log` in the plugin's state directory
+        (Settings, About shows where it is). Remove anything private: paths and conversation text can appear in them.
+      render: text

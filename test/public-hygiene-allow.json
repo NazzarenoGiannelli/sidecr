@@ -1,0 +1,5 @@
+[
+  { "path": "LICENSE", "rule": "author-name", "text": "Copyright (c) 2026 {author}", "reason": "The copyright holder of the MIT licence is the author, by name." },
+  { "path": "package.json", "rule": "author-name", "text": "\"author\": \"{author}\"", "reason": "The package author field names the author (no e-mail address)." },
+  { "path": "README.md", "rule": "author-name", "text": "Made by {author}.", "reason": "The credits line at the end of the README names the author." }
+]

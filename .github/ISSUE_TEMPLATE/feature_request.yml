@@ -1,0 +1,38 @@
+name: Feature request
+description: An idea for Sidecr.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Sidecr aims to stay a small window on top of herdr: look at what the conversation shows, send a message with
+        attachments, and get back to the terminal. Ideas that fit that are the easiest to take.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What you are trying to do
+      description: The situation, and what gets in the way today.
+    validations:
+      required: true
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would help
+      description: How you imagine it working. Keys, settings, what the window would show.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives
+      description: Anything you tried or considered instead.
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Platform
+      multiple: true
+      options:
+        - Windows
+        - Linux
+        - macOS
+        - Any

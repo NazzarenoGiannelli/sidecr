@@ -1,0 +1,22 @@
+# Dependencies and build output
+node_modules/
+dist/
+shell/src-tauri/target*/
+shell/src-tauri/gen/
+
+# Local state and notes
+.state/
+.superpowers/
+spike/
+*.log
+*.af
+*.af~lock~
+
+# Secrets never belong here
+.env
+.env.*
+
+# demo harness output (demo/README.md)
+demo/out/
+demo/fixture/images/
+__pycache__/

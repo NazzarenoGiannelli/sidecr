@@ -1,0 +1,18 @@
+id = "nazz.sidecr"
+name = "Sidecr"
+version = "0.1.0"
+min_herdr_version = "0.9.0"
+description = "Sidecr, a companion window for the herdr terminal multiplexer: a chat for the focused Claude Code pane with attachments, previews and links"
+platforms = ["linux", "windows"]
+
+[[build]]
+command = ["bun", "install"]
+
+[[build]]
+command = ["bun", "run", "build:ui"]
+
+[[actions]]
+id = "open"
+title = "Open Sidecr"
+contexts = ["workspace"]
+command = ["bun", "src/open.ts"]

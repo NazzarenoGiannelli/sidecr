@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sidecr</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header>
+    <div class="heading">
+      <span id="title">Sidecr</span>
+      <span id="subtitle" hidden></span>
+    </div>
+    <span id="status" class="pill"></span>
+    <button id="pin" class="icon-btn" type="button" aria-label="Follow the pane selected in herdr" aria-pressed="false" hidden></button>
+    <button id="media" class="icon-btn" type="button" aria-label="Media and links" aria-haspopup="dialog" aria-controls="media-layer" aria-expanded="false"></button>
+    <button id="switch" class="icon-btn" type="button" aria-label="Switch session"></button>
+    <button id="gear" class="icon-btn" type="button" aria-label="Settings"></button>
+    <button id="ontop" class="icon-btn" type="button" aria-label="Always on top" aria-pressed="false" hidden></button>
+  </header>
+  <div id="follow-bar" hidden><button id="follow-chip" class="follow-chip" type="button"></button></div>
+  <div class="conv-wrap">
+    <main id="conv"></main>
+    <button id="to-bottom" class="icon-btn to-bottom" type="button" aria-label="Scroll to bottom" hidden></button>
+  </div>
+  <div id="notice" hidden></div>
+  <div id="activity" class="activity" hidden>
+    <span id="activity-spinner" class="spin"></span>
+    <span id="activity-text" class="activity-text"></span>
+    <button id="stop" class="icon-btn stop" type="button" title="Stop" aria-label="Stop"></button>
+  </div>
+  <footer>
+    <div id="tray"></div>
+    <div class="composer">
+      <button id="attach" class="icon-btn" type="button" title="Attach files" aria-label="Attach files"></button>
+      <input id="file" type="file" multiple hidden>
+      <textarea id="msg" rows="1" placeholder="Type something"></textarea>
+      <button id="keys-hint" class="hint-chip" type="button" aria-label="Keyboard shortcuts">?</button>
+      <button id="send" class="icon-btn send" type="button" aria-label="Send"></button>
+    </div>
+  </footer>
+  <div id="overlay" hidden>
+    <div class="panel">
+      <input id="q" type="text" placeholder="Switch to pane" autocomplete="off">
+      <ul id="list"></ul>
+    </div>
+  </div>
+  <div id="settings" class="layer" hidden><div class="panel wide" role="dialog" aria-modal="true" aria-label="Settings" tabindex="-1"></div></div>
+  <div id="cheatsheet" class="layer" hidden><div class="panel wide" role="dialog" aria-modal="true" aria-label="Keyboard shortcuts" tabindex="-1"></div></div>
+  <div id="media-layer" class="layer" hidden><div class="panel wide media-panel" role="dialog" aria-modal="true" aria-label="Media and links" tabindex="-1"></div></div>
+  <div id="lightbox" hidden><img alt=""><button id="lightbox-fs" class="icon-btn" type="button"></button></div>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
