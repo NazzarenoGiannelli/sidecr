@@ -21,6 +21,23 @@ Sidecr is a small window you summon with a key on top of herdr. It shows the con
 - Keyboard shortcuts for everything, with an in-app cheat sheet (`Ctrl+/`).
 - A silent system notification when Claude finishes or needs you while the window is in the background.
 
+## Screenshots
+
+All of them show an invented demo session, not a real conversation.
+
+<table>
+  <tr>
+    <td width="33%"><img src="docs/media/shot-conversation.png" alt="The conversation view: Markdown answer with a code block, a link and a folder path"><br><sub>The conversation: Markdown, code blocks with a copy button, clickable links, files and folders.</sub></td>
+    <td width="33%"><img src="docs/media/shot-media.png" alt="The Media and links panel listing the images and links of the session"><br><sub>The Media &amp; links panel: every image and link the session shared.</sub></td>
+    <td width="33%"><img src="docs/media/shot-lightbox.png" alt="An image opened in the lightbox"><br><sub>Images open in a lightbox, fullscreen with Shift+click.</sub></td>
+  </tr>
+  <tr>
+    <td width="33%"><img src="docs/media/shot-settings.png" alt="The settings panel"><br><sub>Settings: what the window shows, text size, send key, follow mode, acrylic and accent in the native shell.</sub></td>
+    <td width="33%"><img src="docs/media/shot-shortcuts.png" alt="The keyboard shortcuts cheat sheet"><br><sub>The in-app cheat sheet (<code>Ctrl+/</code>).</sub></td>
+    <td></td>
+  </tr>
+</table>
+
 ## Requirements
 
 - [herdr](https://github.com/herdrdev/herdr) 0.9.0 or newer.
